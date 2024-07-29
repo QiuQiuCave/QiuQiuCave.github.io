@@ -1,0 +1,21 @@
+site_name: QiuQiu_Cave
+theme:
+  name: material
+  palette:
+    primary: yellow
+    accent: light-blue
+  font:
+    text: Roboto
+    code: Roboto Mono
+  feature:
+    - navigation.tabs
+    - navigation.top
+    - navigation.sections
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotation
+    - content.code.copy
+  language: en
+
