@@ -10,6 +10,9 @@ nav:
   - 项目:
     - Project/Riverside_treehouse.md
     - Project/Proxy.md
+  - 教程:
+    - Markdown教程/Markdown_教程.md
+    - Markdown教程/Markdown_Guide.md
 
 
 
@@ -170,7 +173,7 @@ markdown_extensions:
 # extra_javascript:
 #   # [数学公式支持]
 #   # https://squidfunk.github.io/mkdocs-material/reference/math/#katex
-#   - mkdocs/javascripts/katex.js
+#   - javascripts/katex.js
 #   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/katex.min.js
 #   - https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.7/contrib/auto-render.min.js
 # extra_css:
@@ -182,3 +185,15 @@ markdown_extensions:
 #   - mkdocs/css/no-footer.css
 #   # 无序列表符号自定义
 #   - mkdocs/css/unordered-list-symbols.css
+
+  # markdown_extensions:
+  # - pymdownx.arithmatex:
+  #     generic: true
+
+extra_javascript:
+  - javascripts/katex.js
+  - https://unpkg.com/katex@0/dist/katex.min.js
+  - https://unpkg.com/katex@0/dist/contrib/auto-render.min.js
+
+extra_css:
+  - https://unpkg.com/katex@0/dist/katex.min.css
