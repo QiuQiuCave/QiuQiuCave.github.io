@@ -104,9 +104,9 @@ extra:
     - name: GitHub | QiuQiuCave
       icon: fontawesome/brands/github
       link: https://github.com/QiuQiuCave
-    # - name: Bilibili | 杨希杰619
-    #   icon: fontawesome/brands/bilibili
-    #   link: https://space.bilibili.com/24502827
+    - name: Bilibili | 芋子球球
+      icon: fontawesome/brands/bilibili
+      link: https://space.bilibili.com/27263274
     # - name: 小杰答疑群 QQ 796233390
     #   icon: fontawesome/brands/qq
     #   link: https://yang-xijie.github.io/ME/qq-groups/
