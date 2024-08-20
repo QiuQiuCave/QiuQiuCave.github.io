@@ -74,5 +74,40 @@ Remarks:
 
 **A:** The state value is the mean of all possible returns that can be obtained starting from a state. If everything -- $\pi(a \mid s)$, $p(r \mid s, a)$, $p(s' \mid s, a)$ -- is deterministic, then state value is the same as return.
 
+### Bellman equation
+ Bellman equation describes the relationship among the values of all states.
+ $$
+v_\pi(s) = \mathbb{E}[G_t \mid S_t = s]=\mathbb{E}[R_{t+1}+\gamma G_{t+1} \mid S_t =s]=\mathbb{E}[R_{t+1} \mid S_t=s]+\gamma\mathbb{E}[G_{t+1} \mid S_t = s]
+ $$
+First, calculate the first term $\mathbb{E}[R_{t+1} \mid S_t = s]$:
+$$
+\mathbb{E}[R_{t+1} \mid S_t=s] = \sum_{a}(a \mid s)\mathbb{E}[R_{t+1}\mid S_t=s,A_t=a]
+$$
+Which is the mean of immediate rewards
 
+Second, calculate the second term$gamma\mathbb{E}[G_{t+1} \mid S_t = s]$
+$$
+\mathbb{E}[G_{t+1} \mid S_t = s] = \sum_{s'} \mathbb{E}[G_{t+1} \mid S_t = s, S_{t+1} = s'] p(s' \mid s) \\
+= \sum_{s'} \mathbb{E}[G_{t+1} \mid S_{t+1} = s'] p(s' \mid s) \\
+= \sum_{s'} v_{\pi}(s') p(s' \mid s) \\
+= \sum_{s'} v_{\pi}(s') \sum_a p(s' \mid s, a) \pi(a \mid s)
+$$
+Which is the mean of future rewards\dots
 
+Therefore, we have:
+$$\begin{aligned}
+v_{\pi}(s) & =\mathbb{E}\left[R_{t+1} \mid S_{t}=s\right]+\gamma \mathbb{E}\left[G_{t+1} \mid S_{t}=s\right] \\
+& =\underbrace{\sum_{a} \pi(a \mid s) \sum_{r} p(r \mid s, a) r}_{\text {mean of immediate rewards }}+\underbrace{\gamma \sum_{a} \pi(a \mid s) \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)}_{\text {mean of future rewards }} \\
+& =\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right], \quad \forall s \in \mathcal{S}
+\end{aligned}$$
+Highlights:
+- The above equation is called the Bellman equation, which characterizes the relationship among the state-value functions of different states.
+- It consists of two terms: the immediate reward term and the future reward term.
+- A set of equations: every state has an equation like this.
+
+### Bellman equation: Matrix-vector form
+Why consider the matrix-vector form?
+- How to solve the Bellman equation? One unkonwn relies on another unknown.$v_\pi(s)=\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right]$
+- The above elementwise form is valid for every state $s\in S$. That means there are $｜S｜$equations like this!
+- If we put all the equations together, we have a set of linear equations, which can be concisely written in a matrix-vector form.
+- The matrix-vector form is very elegant and important.
