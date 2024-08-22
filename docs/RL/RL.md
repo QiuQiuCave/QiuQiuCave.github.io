@@ -28,12 +28,14 @@ p(s_{t+1} \mid a_{t+1}, s_t, \ldots, a_1, s_0) &= p(s_{t+1} \mid a_{t+1}, s_t) \
 p(r_{t+1} \mid a_{t+1}, s_t, \ldots, a_1, s_0) &= p(r_{t+1} \mid a_{t+1}, s_t)
 \end{align*}
 $$ 
+
 ## State Value and Bellman equation
 ### State Value
 Consider the following single-step process:
 $$
 S_t\xrightarrow{A_t}R_{t+1},S_{t+1}
 $$
+
 - $t,t+1$: discrete time instances
 - $S_t$: state at time $t$
 - $A_t$: the action taken at state $S_t$
@@ -67,6 +69,7 @@ v_{\pi}(s) = \mathbb{E}[G_t \mid S_t = s]
 \]
 
 Remarks:
+
 - It is a function of $s$. It is a conditional expectation with the condition that the state starts from $s$.
 - It is based on the policy $\pi$. For a different policy, the state value may be different.
 
@@ -104,12 +107,14 @@ v_{\pi}(s) & =\mathbb{E}\left[R_{t+1} \mid S_{t}=s\right]+\gamma \mathbb{E}\left
 & =\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right], \quad \forall s \in \mathcal{S}
 \end{aligned}$$
 Highlights:
+
 - The above equation is called the Bellman equation, which characterizes the relationship among the state-value functions of different states.
 - It consists of two terms: the immediate reward term and the future reward term.
 - A set of equations: every state has an equation like this.
 
 ### Bellman equation: Matrix-vector form
 Why consider the matrix-vector form?
+
 - How to solve the Bellman equation? One unkonwn relies on another unknown.$v_\pi(s)=\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right]$
 - The above elementwise form is valid for every state $s\in S$. That means there are $｜S｜$equations like this!
 - If we put all the equations together, we have a set of linear equations, which can be concisely written in a matrix-vector form.
