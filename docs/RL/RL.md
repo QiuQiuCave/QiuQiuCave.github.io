@@ -11,6 +11,7 @@
  - episode: 
 ### Markov decision process(MDP)
 Key elements of MDP:
+
 - Sets:
   - State: the set of $\mathcal{S}$
   - Action: the set of actions $\mathcal{A}(s)$is associated for stater s  $s\in\mathcal{S}$
@@ -77,7 +78,9 @@ Remarks:
 ### Bellman equation
  Bellman equation describes the relationship among the values of all states.
  $$
-v_\pi(s) = \mathbb{E}[G_t \mid S_t = s]=\mathbb{E}[R_{t+1}+\gamma G_{t+1} \mid S_t =s]=\mathbb{E}[R_{t+1} \mid S_t=s]+\gamma\mathbb{E}[G_{t+1} \mid S_t = s]
+v_\pi(s) = \mathbb{E}[G_t \mid S_t = s]\\
+=\mathbb{E}[R_{t+1}+\gamma G_{t+1} \mid S_t =s]\\
+=\mathbb{E}[R_{t+1} \mid S_t=s]+\gamma\mathbb{E}[G_{t+1} \mid S_t = s]
  $$
 First, calculate the first term $\mathbb{E}[R_{t+1} \mid S_t = s]$:
 $$
