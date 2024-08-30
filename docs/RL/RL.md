@@ -101,11 +101,13 @@ $$
 Which is the mean of future rewards\dots
 
 Therefore, we have:
+
 $$\begin{aligned}
 v_{\pi}(s) & =\mathbb{E}\left[R_{t+1} \mid S_{t}=s\right]+\gamma \mathbb{E}\left[G_{t+1} \mid S_{t}=s\right] \\
 & =\underbrace{\sum_{a} \pi(a \mid s) \sum_{r} p(r \mid s, a) r}_{\text {mean of immediate rewards }}+\underbrace{\gamma \sum_{a} \pi(a \mid s) \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)}_{\text {mean of future rewards }} \\
 & =\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right], \quad \forall s \in \mathcal{S}
 \end{aligned}$$
+
 Highlights:
 
 - The above equation is called the Bellman equation, which characterizes the relationship among the state-value functions of different states.
