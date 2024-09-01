@@ -117,7 +117,12 @@ Highlights:
 ### Bellman equation: Matrix-vector form
 Why consider the matrix-vector form?
 
-- How to solve the Bellman equation? One unkonwn relies on another unknown.$v_\pi(s)=\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right]$
+- How to solve the Bellman equation? One unkonwn relies on another unknown.$$v_\pi(s)=\sum_{a} \pi(a \mid s)\left[\sum_{r} p(r \mid s, a) r+\gamma \sum_{s^{\prime}} p\left(s^{\prime} \mid s, a\right) v_{\pi}\left(s^{\prime}\right)\right]$$
 - The above elementwise form is valid for every state $s\in S$. That means there are $｜S｜$equations like this!
 - If we put all the equations together, we have a set of linear equations, which can be concisely written in a matrix-vector form.
 - The matrix-vector form is very elegant and important.
+
+Rewrite the Bellman equation as
+$$
+v_{\pi}(s)+\gamma\sum_{s'}p_{\pi}(s'\mid s)v_{\pi}(s')
+$$ 
