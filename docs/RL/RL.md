@@ -121,3 +121,14 @@ Why consider the matrix-vector form?
 - The above elementwise form is valid for every state $s\in S$. That means there are $｜S｜$equations like this!
 - If we put all the equations together, we have a set of linear equations, which can be concisely written in a matrix-vector form.
 - The matrix-vector form is very elegant and important.
+
+Why to solve state values?
+- Given a policy, finding out the corresponding state values is called policy evaluation! It is a fundamental problem in RL. It is foundation to find better policies.
+- It is important to understand how to solve the Bellman equations.
+
+### Action value
+From state to action value:
+- State value: the average return the agent can get starting from a state.
+- Action value: the average return the agent can get starting from a state and taking an action.
+
+Definition:
