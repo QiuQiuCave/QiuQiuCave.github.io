@@ -132,3 +132,10 @@ From state to action value:
 - Action value: the average return the agent can get starting from a state and taking an action.
 
 Definition:
+
+$$
+q_{\pi}(s,a)=E[G_t \mid S_t = s, A_t = a]
+$$
+
+- $q_{\pi}(s,a)$ is a function of the state-action pair (s,a)
+-  $q_{\pi}(s,a)$ depends on $\pi$
